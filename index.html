@@ -10,9 +10,9 @@
 </head>
 <body>   
     <div ng-app="Apppayroll" ng-controller="CostController">
-        Lương : <input type="number" ng-model='wage'> <br>
-        Kinh nghiệm : <input type="number" ng-model='ex'><br>
-        <span>Tiền thưởng sau thuế : {{sum}}</span><br>
+        Lương : <input type="number" ng-model='wage'> $ <br>
+        Kinh nghiệm : <input type="number" ng-model='ex'> $ <br>
+        <span>Tiền thưởng sau thuế : {{sum}} $</span><br>
         <button ng-click="payroll()">Tính</button>
         <script>
             var app = angular.module('Apppayroll', []); 
