@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tính lương nhân viên</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js" integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>   
+    <div ng-app="Apppayroll" ng-controller="CostController">
+        Lương : <input type="number" ng-model='wage'> <br>
+        Kinh nghiệm : <input type="number" ng-model='ex'><br>
+        <span>Tiền thưởng sau thuế : {{sum}}</span><br>
+        <button ng-click="payroll()">Tính</button>
+        <script>
+            var app = angular.module('Apppayroll', []); 
+            app.controller('CostController',function($scope){
+                $scope.wage=0;
+                $scope.ex=0;
+                $scope.sum =0;
+                
+                $scope.payroll = function(){
+                    if(this.ex<5){
+                        this.sum = this.wage * 3 * 0.9
+                    }else if(this.ex<=10){
+                        this.sum = this.wage * 6 * 0.9
+                    }else{
+                        this.sum = this.wage * 12 * 0.9
+                    }
+                }
+            })          
+        </script>
+    </div>
+    
+</body>
+</html>
